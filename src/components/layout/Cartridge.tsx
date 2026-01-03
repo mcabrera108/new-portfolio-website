@@ -2,7 +2,9 @@ import style from "../../styles/_cartridge.module.scss";
 function Cartridge(props: {
   backLabelText: string;
   title: string;
+  projectDesc: string;
   projectLink: string;
+  labelUrl: string;
 }) {
   return (
     <div className={style.cartContainer}>
@@ -44,7 +46,12 @@ function Cartridge(props: {
               <figure className={`${style.leftindent}`}></figure>
               <figure className={`${style.rightindent}`}></figure>
               <figure className={`${style.triangleDown}`}></figure>
-              <figure className={`${style.label}`}></figure>
+              <figure
+                className={`${style.label}`}
+                style={{
+                  backgroundImage: `${props.labelUrl}`,
+                }}
+              ></figure>
             </figure>
             <figure className={`${style.back}`}>
               <figure className={`${style.base} ${style.tall}`}></figure>
@@ -133,11 +140,7 @@ function Cartridge(props: {
           title={`${props.title} Repo`}
         >
           <div className={style.cartTitle}>{props.title}</div>
-          <div className={style.cartSubTitle}>
-            Lorem ipsum dolor sit amet consectetur adipiscing elit. Sit amet
-            consectetur adipiscing elit quisque faucibus ex. Adipiscing elit
-            quisque faucibus ex sapien vitae pellentesque.
-          </div>
+          <div className={style.cartSubTitle}>{props.projectDesc}</div>
         </a>
       </div>
     </div>
