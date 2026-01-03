@@ -1,0 +1,430 @@
+// variables
+$base-color: #a7a9ac;
+$dark: #939598;
+$darker: #828487;
+$darkest: #727477;
+$width: 200px;
+$height: $width * 1.1;
+
+figure {
+  margin: 0;
+  position: absolute;
+}
+
+.cartridge {
+  cursor: pointer;
+  display: inline-block;
+  width: $width;
+  height: $height;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+
+  .case {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    transform-style: preserve-3d;
+  }
+
+  .front,
+  .back {
+    display: block;
+    height: 100%;
+    width: 100%;
+  }
+
+  .base {
+    background-color: $base-color;
+    position: absolute;
+  }
+
+  .tall {
+    height: 50%;
+    width: 90%;
+    top: 0;
+    left: 0;
+  }
+
+  .wide {
+    height: 100%;
+    width: 100%;
+    bottom: 0;
+    right: 0;
+  }
+
+  .linebase {
+    position: absolute;
+    // background-color: $dark;
+    width: 100%;
+    height: 15%;
+    left: 0;
+  }
+  .darkline {
+    position: absolute;
+    background-color: $dark;
+    width: 20%;
+    left: 15%;
+    height: calc(15% / 9);
+    box-shadow: 0px 1px 2px black;
+  }
+  .line {
+    position: absolute;
+    background-color: $base-color;
+    width: 20%;
+    left: 15%;
+    height: calc(15% / 9);
+    box-shadow: 0px 1px 2px black;
+  }
+  .sideline {
+    position: absolute;
+    background-color: $base-color;
+    width: 100%;
+    height: 1%;
+    box-shadow: 0px 1px 2px black;
+  }
+  .darkgap {
+    position: absolute;
+    background-color: $dark;
+    width: 20%;
+    left: 15%;
+    height: calc(15% / 1.5);
+    box-shadow: 0px 1px 3px black;
+  }
+  .gap {
+    position: absolute;
+    background-color: $base-color;
+    width: 20%;
+    left: 15%;
+    height: calc(15% / 1.5);
+    box-shadow: 0px 1px 3px black;
+  }
+
+  .leftindent,
+  .rightindent {
+    position: absolute;
+    height: 25%;
+    width: 5%;
+    bottom: 0;
+    background-color: $dark;
+  }
+
+  .rightindent {
+    right: 0;
+  }
+
+  .label {
+    background-color: $dark;
+    background-position: center;
+    background-size: cover;
+    height: $width * 0.7;
+    width: 52%;
+    bottom: 35%;
+    top: 0;
+    left: calc(40% - 1%);
+    position: absolute;
+    border: $darker solid $width/100;
+    border-radius: 0 0 5px 5px;
+  }
+  .backlabel {
+    background-color: $dark;
+    background-position: center;
+    background-size: cover;
+    height: 25%;
+    width: 75%;
+    top: 50%;
+    left: 12.5%;
+    position: absolute;
+    border: $darker solid $width/100;
+    border-radius: 0 0 5px 5px;
+    text-align: center;
+    font-size: 1rem;
+  }
+  .labelText {
+    display: inline-block;
+    transform: scaleX(-1);
+  }
+  .backbottomlabel {
+    background-color: $base-color;
+    background-position: center;
+    background-size: cover;
+    height: 15%;
+    width: 40%;
+    top: 80%;
+    left: 30%;
+    position: absolute;
+    border: $darker solid $width/100;
+    border-radius: 0 0 5px 5px;
+  }
+  .triangleDown {
+    width: 20px;
+    position: absolute;
+    left: calc(45% - 1%);
+    top: 70%;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 20px solid rgb(151, 151, 151);
+  }
+
+  .front {
+    transform: translateZ(calc($width / 10 / 2));
+  }
+
+  .back {
+    transform: translateZ(calc(-1 * $width / 10 / 2));
+  }
+
+  .rightside,
+  .leftside {
+    width: $width / 10;
+    height: 100%;
+    bottom: 0;
+    right: -$width / 10 / 2;
+    transform: rotateY(90deg);
+  }
+  .top {
+    background-color: $darker;
+    width: 100%;
+    height: 5%;
+    transform: translateZ(-$width * 0.1);
+  }
+
+  .bottom {
+    bottom: 0;
+    background-color: $dark;
+    width: 100%;
+    height: 100%;
+  }
+
+  .floor,
+  .ceiling {
+    background-color: $dark;
+    width: 100%;
+    height: $width * 0.04;
+    transform: rotateX(90deg);
+  }
+
+  .ceiling {
+    transform: translateY(-$height * 0.15 / 9) rotateX(90deg);
+  }
+
+  .leftside {
+    left: -$width / 10 / 2;
+    .bottom {
+      height: 100%;
+    }
+
+    .line {
+      transform: translateZ(-$width * 0.02);
+    }
+  }
+
+  .topside {
+    width: 100%;
+    height: $width * 0.1;
+    top: -$width * 0.05;
+    transform: rotateX(90deg);
+    transform-style: preserve-3d;
+
+    .left {
+      background-color: $dark;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  // .bottomside {
+  //   background-color: #262626;
+  //   bottom: -$width * 0.05;
+  //   height: $width * 0.1 - $width * 0.05;
+  //   width: $width - $width * 0.05;
+  //   transform: rotateX(90deg);
+  //   border: $darker $width * 0.025 solid;
+  // }
+  .darkone {
+    top: 0;
+  }
+  .darktwo {
+    top: 3%;
+  }
+  .darkthree {
+    top: 6%;
+  }
+  .darkfour {
+    top: 9%;
+  }
+  .darkfive {
+    top: 12%;
+  }
+  .zero {
+    top: 0;
+  }
+  .one {
+    top: 10% + 15% / 9 * 1;
+  }
+
+  .two {
+    top: 10% + 15% / 9 * 3.25;
+  }
+
+  .three {
+    top: 10% + 15% / 9 * 5.5;
+  }
+
+  .four {
+    top: 10% + 15% / 9 * 7.75;
+  }
+  .five {
+    top: 10% + 15% / 9 * 10;
+  }
+  .six {
+    top: 10% + 15% / 9 * 12.25;
+  }
+  .seven {
+    top: 10% + 15% / 9 * 14.5;
+  }
+  .eight {
+    top: 10% + 15% / 9 * 16.75;
+  }
+  .nine {
+    top: 10% + 15% / 9 * 19;
+  }
+  .ten {
+    top: 10% + 15% / 9 * 21.25;
+  }
+  .eleven {
+    top: 10% + 15% / 9 * 23.5;
+  }
+  .twelve {
+    top: 10% + 15% / 9 * 25.75;
+  }
+  .thirteen {
+    top: 10% + 15% / 9 * 28;
+  }
+  .fourteen {
+    top: 10% + 15% / 9 * 30.25;
+  }
+  .fifteen {
+    top: 10% + 15% / 9 * 32.5;
+  }
+  .sixteen {
+    top: 10% + 15% / 9 * 34.75;
+  }
+  .seventeen {
+    top: 10% + 15% / 9 * 37;
+  }
+  .eighteen {
+    top: 10% + 15% / 9 * 39.25;
+  }
+  .nineteen {
+    top: 10% + 15% / 9 * 41.5;
+  }
+  .twenty {
+    top: 10% + 15% / 9 * 43.75;
+  }
+  .twentyone {
+    top: 10% + 15% / 9 * 46;
+  }
+  .twentytwo {
+    top: 10% + 15% / 9 * 48.25;
+  }
+
+  // }
+
+  // // extra display css
+  // body,
+  // html {
+  //   margin: 0;
+  //   height: 100%;
+  //   text-align: center;
+}
+.cartContainer a {
+  text-decoration: none;
+  color: black;
+}
+.cartContainer a:visited {
+  text-decoration: none;
+  color: black;
+}
+.cartTitle {
+  display: flex;
+  justify-content: center;
+  font-size: 2rem;
+  margin-top: 1rem;
+  color: white;
+}
+.cartTitle:hover {
+  text-decoration: underline;
+  color: #fbffc4;
+}
+.cartSubTitle {
+  margin-top: 0.5rem;
+  text-align: center;
+  font-size: 1rem;
+  color: white;
+}
+.cartContainer {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  height: 100%;
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0f9ff', endColorstr='#d3e3ff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+.cartWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.case {
+  -webkit-animation: customrotate 20s infinite linear; /* Safari 4+ */
+  -moz-animation: customrotate 20s infinite linear; /* Fx 5+ */
+  -o-animation: customrotate 20s infinite linear; /* Opera 12+ */
+  animation: customrotate 20s infinite linear; /* IE 10+, Fx 29+ */
+}
+
+@-webkit-keyframes customrotate {
+  0% {
+    transform: none;
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+@-moz-keyframes customrotate {
+  0% {
+    transform: none;
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+@-o-keyframes customrotate {
+  0% {
+    transform: none;
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+@keyframes customrotate {
+  0% {
+    transform: none;
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+customize catridge label .label {
+  background-image: url("http://pre08.deviantart.net/d867/th/pre/i/2012/114/a/9/pokemon_yellow_cover_art_by_comunello76-d4xfrr5.png");
+}
+@media screen and (max-width: 320px) {
+  .cartContainer {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 321px) and (max-width: 1024px) {
+  .cartContainer {
+    width: 100%;
+  }
+}

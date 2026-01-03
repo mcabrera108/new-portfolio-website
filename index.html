@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap"
+      rel="stylesheet"
+    />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio Website</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <form action="/contact" netlify-honeypot="bot-field" name="contact" hidden>
+      <div className="{style.formContainer}">
+        <div className="{style.formWrapper}">
+          <div className="{style.nameContainer}">
+            <div className="{style.inputContainer}">
+              <div>
+                <label htmlFor="name" className="{style.inputLabel}">
+                  Name{" "}
+                </label>
+              </div>
+              <input id="name" type="text" placeholder="Name" name="name" />
+            </div>
+            <div className="{style.inputContainer}">
+              <div>
+                <label htmlFor="email" className="{style.inputLabel}">
+                  Email{" "}
+                </label>
+              </div>
+              <input type="text" id="email" placeholder="Email" name="email" />
+            </div>
+          </div>
+          <div>
+            <div>
+              <label htmlFor="message" className="{style.inputLabel}">
+                Message:{" "}
+              </label>
+            </div>
+            <textarea
+              name="message"
+              id="message"
+              name="message"
+              className="{style.inputArea}"
+            ></textarea>
+          </div>
+          <div>
+            <button
+              className="{`${style.submitBtn}"
+              ${style.gradientRainbow}`}
+              type="submit"
+            >
+              Submit
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </body>
+</html>

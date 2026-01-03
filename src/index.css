@@ -1,0 +1,14 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Pixelify Sans", "Courier", "Lucida Sans";
+  scrollbar-color: rgb(29, 41, 82) rgb(27, 28, 41);
+}
+:root {
+  --layout-bg-color: rgb(29, 41, 82);
+  --default-font-color: rgb(216, 216, 216);
+}
+main {
+  min-height: 100vh;
+}
