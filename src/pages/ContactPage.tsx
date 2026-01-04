@@ -24,7 +24,7 @@ function ContactPage() {
           , or drop a message below:{" "}
         </div>
       </div>
-      <form action="" style={{ width: "100%" }} method="POST">
+      <form style={{ width: "100%" }} method="POST" name="contact">
         <div className={style.formContainer}>
           <div className={style.formWrapper}>
             <div className={style.nameContainer}>
@@ -35,6 +35,7 @@ function ContactPage() {
                   </label>
                 </div>
                 <input
+                  name="name"
                   id="name"
                   type="text"
                   placeholder="Name"
@@ -53,8 +54,9 @@ function ContactPage() {
                 </div>
                 <input
                   className={style.inputField}
-                  type="text"
+                  type="email"
                   id="email"
+                  name="email"
                   placeholder="Email"
                   value={email}
                   onChange={(e) => {
