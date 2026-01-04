@@ -25,6 +25,7 @@ function ContactPage() {
         </div>
       </div>
       <form style={{ width: "100%" }} method="POST" name="contact">
+        <input type="hidden" name="form-name" value={"contact"} />
         <div className={style.formContainer}>
           <div className={style.formWrapper}>
             <div className={style.nameContainer}>
