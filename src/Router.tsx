@@ -4,12 +4,15 @@ import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
 import ProjectsPage from "./pages/ProjectsPage";
+import SuccessPage from "./pages/SuccessPage";
+import ErrorPage from "./pages/ErrorPage";
 
 function Router() {
   const router = createBrowserRouter([
     {
       path: "/",
       element: <App />,
+      errorElement: <ErrorPage />,
       children: [
         {
           path: "/",
@@ -26,6 +29,10 @@ function Router() {
         {
           path: "/projects",
           element: <ProjectsPage />,
+        },
+        {
+          path: "/success",
+          element: <SuccessPage />,
         },
       ],
     },
