@@ -3,11 +3,14 @@ import style from "../styles/layout.module.scss";
 function ProjectsPage() {
   return (
     <div className={style.projectContainer}>
+      <div className={style.contactTitle} style={{ marginBottom: "1em" }}>
+        My Projects
+      </div>
       <div className={style.projectWrapper}>
         <Cartridge
           backLabelText={"Play Me!"}
           title={"Figure-Chan"}
-          labelUrl=""
+          labelUrl="url(https://i.imgur.com/q49bg7y.png)"
           projectDesc={
             "A comprehensive, community-driven database dedicated to the documentation of Japanese anime figures, American action figures, and Chinese Resin statues."
           }

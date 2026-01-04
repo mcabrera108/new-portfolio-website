@@ -166,6 +166,24 @@
   margin-left: 1rem;
   transition: transform 0.3s ease-in-out;
 }
+.aboutDesc {
+  color: white;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-left: 2rem;
+}
+.aboutDesc p {
+  margin-top: 1rem;
+}
+.aboutContainer {
+  width: 100%;
+}
+.aboutWrapper {
+  width: 50%;
+}
+.contactDesc p {
+  margin-top: 1rem;
+}
 .devIcon:hover {
   transform: scale(1.2);
 }
@@ -301,6 +319,12 @@
     font-size: 1.3rem;
     text-align: center;
   }
+  .aboutDesc {
+    color: white;
+    font-size: 1.3rem;
+    text-align: center;
+    margin-left: 2rem;
+  }
   .contactInfo {
     color: white;
     font-size: 1.1rem;
@@ -316,8 +340,20 @@
   .inputContainer {
     width: 100%;
   }
+  .aboutWrapper {
+    width: 100%;
+  }
 }
 @media screen and (min-width: 321px) and (max-width: 1024px) {
+  .aboutWrapper {
+    width: 100%;
+  }
+  .aboutDesc {
+    color: white;
+    font-size: 1.3rem;
+    text-align: center;
+    margin-left: 2rem;
+  }
   .bannerTitle {
     text-align: center;
     font-size: 2.5rem;
