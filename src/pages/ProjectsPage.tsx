@@ -17,7 +17,7 @@ function ProjectsPage() {
           projectLink={"https://github.com/mcabrera108/figure-chan"}
         />
 
-        <Cartridge
+        {/* <Cartridge
           backLabelText={"Hello!"}
           title={"Project In-Progress"}
           projectDesc={"Currently updating my portfolio projects!"}
@@ -39,7 +39,7 @@ function ProjectsPage() {
           projectDesc={"Currently updating my portfolio projects!"}
           labelUrl="url(https://i.imgur.com/cFeTQdO.jpeg)"
           projectLink="https://github.com/mcabrera108"
-        />
+        /> */}
       </div>
     </div>
   );

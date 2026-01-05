@@ -115,6 +115,7 @@ function HomePage() {
           <div className={style.holder}>
             <a
               className={style.downloadLink}
+              target="_blank"
               href="https://docs.google.com/document/d/1IKb0X4ig8myxFRLJWxYjAXTYDmlLwQPOmFlgnbm9ifo/edit?usp=sharing"
               download
             >
