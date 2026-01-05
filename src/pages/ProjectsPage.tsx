@@ -15,6 +15,7 @@ function ProjectsPage() {
             "A comprehensive, community-driven database dedicated to the documentation of Japanese anime figures, American action figures, and Chinese Resin statues."
           }
           projectLink={"https://github.com/mcabrera108/figure-chan"}
+          liveapp={"https://github.com/mcabrera108/figure-chan"}
         />
 
         {/* <Cartridge

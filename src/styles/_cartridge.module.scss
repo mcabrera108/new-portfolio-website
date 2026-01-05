@@ -10,7 +10,17 @@ figure {
   margin: 0;
   position: absolute;
 }
-
+.liveAppBtn {
+  background-color: rgb(255, 247, 201);
+  width: 100%;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 0.2em 0em;
+  margin-top: 0.5rem;
+}
+.liveAppBtn:hover {
+  background-color: rgb(247, 223, 88);
+}
 .cartridge {
   cursor: pointer;
   display: inline-block;
