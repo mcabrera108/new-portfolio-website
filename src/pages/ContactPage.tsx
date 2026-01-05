@@ -1,18 +1,22 @@
-import { useState, type FormEvent } from "react";
+import { useEffect, useState, type FormEvent } from "react";
 import style from "../styles/layout.module.scss";
-import { useNavigate } from "react-router-dom";
+import { Alert, Stack } from "@chakra-ui/react";
+
 function ContactPage() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
-  const navigate = useNavigate();
+  const [notifMessage, setNotifMessage] = useState<string | null>(null);
+  const [isError, setIsError] = useState(false);
+
   interface FormInterface {
     "form-name": string;
     name: string;
     email: string;
     message: string;
   }
+
   async function handleSubmission(e: FormEvent) {
     e.preventDefault();
 
@@ -35,6 +39,9 @@ function ContactPage() {
 
     try {
       setLoading(true);
+      if (!name || !email || !message) {
+        throw new Error("Please input valid fields!");
+      }
       const response = await fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -49,19 +56,49 @@ function ContactPage() {
       if (!response.ok) {
         throw new Error("Error while submitting form. Please try again!");
       }
-      navigate("/success");
-    } catch (error) {
-      console.log(formData);
-      navigate("/error", { state: { message: error } });
+      setNotifMessage("Successfully submitted form!");
+      setIsError(false);
+      setName("");
+      setEmail("");
+      setMessage("");
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        console.log(formData);
+        setNotifMessage(error.message as string);
+        setIsError(true);
+      }
     } finally {
       setLoading(false);
     }
   }
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setNotifMessage(null);
+    }, 4000);
 
+    return () => clearTimeout(timer);
+  }, [notifMessage]);
   return (
     <>
       {loading ? <div className={style.loading}></div> : <></>}
+
       <div className={style.contactContainer}>
+        {notifMessage !== null ? (
+          <Stack gap="4" width="full">
+            <Alert.Root
+              status={isError ? "error" : "success"}
+              variant={"solid"}
+              className={style.notificationMessage}
+              padding={".5rem"}
+            >
+              <Alert.Indicator />
+              <Alert.Title>{notifMessage}</Alert.Title>
+            </Alert.Root>
+          </Stack>
+        ) : (
+          <></>
+        )}
+
         <div>
           <div className={style.contactDesc}>
             Looking to hire me for your next project?

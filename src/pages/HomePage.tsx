@@ -19,6 +19,7 @@ import {
   Heroku,
   LinkedIn,
   GitHubLight,
+  MaterialUI,
 } from "developer-icons";
 
 function HomePage() {
@@ -91,6 +92,9 @@ function HomePage() {
               <div className={style.devIcon}>
                 <Heroku />
               </div>
+              <div className={style.devIcon}>
+                <MaterialUI />
+              </div>
             </Marquee>
           </div>
           <div className={style.holder}>
@@ -107,6 +111,15 @@ function HomePage() {
                 <LinkedIn size={40} />
               </a>
             </div>
+          </div>
+          <div className={style.holder}>
+            <a
+              className={style.downloadLink}
+              href="src/assets/Martin Cabrera Resume.pdf"
+              download
+            >
+              My resume
+            </a>
           </div>
         </div>
       </div>

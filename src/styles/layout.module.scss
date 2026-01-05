@@ -12,6 +12,13 @@
 .projectContainer {
   margin-top: 2em;
 }
+.notificationMessage {
+  position: fixed;
+  top: 14%;
+  left: 35%;
+  z-index: 999;
+  width: 30%;
+}
 .projectWrapper {
   display: flex;
   flex-wrap: wrap;
@@ -69,6 +76,7 @@
   width: 60%;
   padding: 0.5em;
   font-size: 1.5rem;
+  background-color: rgb(218, 218, 218);
 }
 .inputLabel {
   font-size: 1.5rem;
@@ -162,12 +170,17 @@
   max-width: 100%;
   display: flex;
   justify-content: center;
+  gap: 15px;
   margin-top: 1rem;
   color: var(--default-font-color);
 }
 .socialIcon {
-  margin-left: 1em;
   cursor: pointer;
+}
+.downloadLink {
+  color: white;
+  font-size: 2rem;
+  text-align: center;
 }
 .devIcon {
   margin-top: 0.5em;
@@ -352,8 +365,22 @@
   .aboutWrapper {
     width: 100%;
   }
+  .notificationMessage {
+    position: fixed;
+    top: 10%;
+    left: 0;
+    z-index: 999;
+    width: 100%;
+  }
 }
 @media screen and (min-width: 321px) and (max-width: 1024px) {
+  .notificationMessage {
+    position: fixed;
+    top: 10%;
+    left: 0;
+    z-index: 999;
+    width: 100%;
+  }
   .aboutWrapper {
     width: 100%;
   }
