@@ -73,7 +73,7 @@
   display: flex;
   justify-self: center;
   justify-content: center;
-  width: 60%;
+  width: 100%;
   padding: 0.5em;
   font-size: 1.5rem;
   background-color: rgb(218, 218, 218);
@@ -201,7 +201,7 @@
   width: 100%;
 }
 .aboutWrapper {
-  width: 50%;
+  width: 100%;
 }
 .contactDesc p {
   margin-top: 1rem;
@@ -214,7 +214,7 @@
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  width: 50%;
+  width: 100%;
 }
 .navList {
   display: flex;
